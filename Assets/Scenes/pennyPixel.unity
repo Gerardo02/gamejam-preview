@@ -367,6 +367,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7
+  rayDistance: 1.03
+  rayColor: {r: 1, g: 1, b: 1, a: 1}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!212 &1620616319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -426,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620616317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.81, y: -0.112, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -480,7 +485,7 @@ GameObject:
   - component: {fileID: 1778486282}
   - component: {fileID: 1778486281}
   - component: {fileID: 1778486280}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
