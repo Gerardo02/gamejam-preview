@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameInputs.Gameplay.Jump.performed += _=> Jump();
+        gameInputs.Gameplay.Jump.canceled += _=> CancelJump();
     }
 
     void FixedUpdate() 
@@ -67,6 +68,18 @@ public class Player : MonoBehaviour
         
     }
 
+    void CancelJump()
+    {
+        if(rb2D.velocity.y >= 0)
+        {
+            rb2D.velocity = Vector3.zero;
+            Debug.Log("Subiendo");
+        }else
+        {
+            Debug.Log("Bajando");
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = rayColor;
@@ -80,7 +93,6 @@ public class Player : MonoBehaviour
         {
             Coin coin = other.GetComponent<Coin>();
             GameManager.instance.GetScore.AddPoints(coin.GetPoints);
-            Debug.Log(coin.GetPoints);
             Destroy(other.gameObject);
         }
     }
